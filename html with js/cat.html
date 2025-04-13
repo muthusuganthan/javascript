@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+    <title>Document</title>
+</head>
+<body class="bg-black">
+    <img class="h-[250px] mx-auto" id="on" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-on-img.png" alt="blub">
+    <img class="h-[250px] mx-auto" id="cat" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/cat-img.png" alt="cat">
+
+    <div class="bg-gray-900 p-10 w-fit mx-auto space-x-3 space-y-2">
+        <h1 id="sign" class="text-gray-700 text-5xl">switch on </h1>
+        <button id="bt1" class="px-6 py-2 bg-white text-black">on</button>
+        <button id="bt2" class="px-6 py-2 bg-white text-black">off</button>
+    </div>
+    <script>
+         
+        var on=document.getElementById("on");
+        var cat=document.getElementById("cat");
+        var bt1=document.getElementById("bt1");
+        var bt2=document.getElementById("bt2");
+        var sign=document.getElementById("sign");
+        bt2.addEventListener("click",()=>{
+            on.src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-off-img.png";
+             cat.src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/cat-eyes-img.png";
+             bt2.style.backgroundColor="red";
+             bt1.style.backgroundColor="grey";
+             sign.textContent="switch off";
+             console.dir(bt1);
+        });
+        bt1.addEventListener("click",()=>{
+            on.src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-on-img.png";
+            cat.src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/cat-img.png";
+            bt1.style.backgroundColor="green";
+            bt2.style.backgroundColor="grey";
+            sign.textContent="switch on";
+        })
+
+
+
+    </script>
+</body>
+</html>

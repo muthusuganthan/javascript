@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="2xl mx-auto bg-slate-700">
+        <div class="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 bg-yellow-500 px-2">
+          
+            <div class="bg-blue-400 flex justify-between items-center">
+            <p>logo</p>
+            <div>
+            <svg id="icon1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu  md:hidden"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            <svg id="icon2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x hidden md:hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </div>
+            </div>
+           
+            <div id="navlist" class="bg-red-400 hidden md:block  ">
+            <ul class=" flex flex-col items-center md:flex-row justify-end gap-6"> 
+                <li class="nav">contact</li>
+                <li class="nav">home</li>
+                 <li class="nav">description</li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        var icon1=document.getElementById("icon1")
+        var icon2=document.getElementById("icon2")
+        var navlist=document.getElementById("navlist")
+        var nav=document.getElementsByClassName("nav")
+        
+// loop
+for(let i=0; i<nav.length; i++){
+    nav[i].addEventListener("click",()=>{
+        icon2.classList.add("hidden");
+            icon1.classList.remove("hidden");
+            console.dir(icon2)
+            navlist.classList.add("hidden");
+  
+
+
+    })
+}
+
+
+
+        icon1.addEventListener("click",()=>{
+            icon2.classList.remove("hidden");
+            icon1.classList.add("hidden");
+            console.dir(icon2)
+            navlist.classList.remove("hidden");
+        })
+
+
+icon2.addEventListener("click",()=>{
+    icon2.classList.add("hidden");
+            icon1.classList.remove("hidden");
+            console.dir(icon2)
+            navlist.classList.add("hidden");
+  
+})
+
+    </script>
+</body>
+</html>

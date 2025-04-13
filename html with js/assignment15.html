@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> modernasync&awaitsyntax</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="2xl:container mx-auto bg-green-300 h-screen">
+        <div class="w-[90%] mx-auto p-10">
+
+    <p class="text-balance text-black text-base leading-6 font-medium font-Roboto w-[full] h-[500px] " id="par">u</p>
+    <div class="flex flex-row justify-center items-center">
+    <button class= "bg-orange-500 text-white px-6 py-1" id="refresh"> refresh </button>
+</div>
+    </div>
+    </div>
+   
+    <script>
+     var par =document.getElementById("par");
+     var refresh =document.getElementById("refresh");
+    
+    
+     async function fetchdata(){
+ try{
+     var response = await fetch("https://baconipsum.com/api/?type=all.");
+     var data = await response.json();
+     par.textContent= `${data}`
+ }
+ catch(error){
+     console.log("data error")
+     par.textContent= "error occured"
+ }}
+ refresh.addEventListener("click",fetchdata);
+ fetchdata();
+ </script>
+ 
+</body>
+</html>

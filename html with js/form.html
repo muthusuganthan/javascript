@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="2xl:container mx-auto bg-gray-600 ">
+        <div class="w-[90%] mx-auto flex justify-center items-center h-screen">
+           
+           
+            <div class="bg-white bg-opacity-10 rounded-lg border border-white border-opacity-20 p-5  ">
+                       <h1 class="text-center text-white text-2xl font-medium mb-2 ">login</h1>
+            <hr>
+            <form  class="flex flex-col gap-3 " id="form">
+               <div>
+                <label class="text-white text-base font-medium mb-2" for="email">Email:</label>
+                <br>
+                <input class="rounded-lg outline-none" type="text" name="email" id="email">
+                <p id="para1"></p>
+            </div>
+            <div>    
+               
+                <label class="text-white text-base font-medium mb-2" for="passsword">Password:</label>
+                <br>
+                <input class="rounded-lg outline-none" type="text " name="password" id="password" >
+                <p id="para2"></p>
+            </div>
+            <div class="flex flex-row justify-center">    
+            <button class="bg-green-500 text-white px-7  py-1 rounded-md">login</button>
+        </div>
+                </form>
+                </div>
+<script>
+var form = document.getElementById("form");
+var email = document.getElementById("email");
+var passsword = document.getElementById("password");
+var para1 = document.getElementById("para1")
+var para2 = document.getElementById("para2")
+
+form.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    console.log(email.value);
+    console.log(passsword.value);
+    advance(email.value,passsword.value)
+    email.value="";
+    passsword.value="";
+    
+})
+
+function advance(email,pass){
+    // console.log(email,pass);
+   
+    const emailregex =/^\S+@\S+\.\S+$/
+    if(email.match(emailregex)){
+        console.log("e.true")
+       
+        para1.textContent="";
+        alert("login sucess")
+        
+
+    }
+    else{
+        // console.log("false mail")
+        
+        para1.textContent="invalid email";
+
+    }
+
+    const passregex =/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
+    if(pass.match(passregex)){
+        console.log("p.true")
+        para2.textContent="";
+        alert("login sucess")
+    
+
+    }
+    else{
+        //  console.log("p.false")
+         para2.textContent="invalid password";
+    }
+
+
+
+    
+
+}
+
+
+
+</script>
+
+</body>
+</html>

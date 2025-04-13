@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="count"> counter</h1>
+    <p id="cou">0</p>
+    <button id="dec">decrease</button>
+    <button id="res">reset</button>
+    <button id="inc">increase</button>
+    <script>
+        var cou=document.getElementById("cou");
+        var dec=document.getElementById("dec");
+        var res=document.getElementById("res");
+        var inc=document.getElementById("inc");
+        inc.addEventListener("click",()=>{
+            cou.textContent = parseInt(cou.textContent ) + 1;
+            color();
+
+            console.log(typeof(cou.textContent));
+        })
+        dec.addEventListener("click",()=>{
+            cou.textContent = parseInt(cou.textContent ) - 1;
+            color();
+            console.log(typeof(cou.textContent));
+        })
+        res.addEventListener("click",()=>{
+            cou.textContent = 0;
+            color();
+            console.log(typeof(cou.textContent));
+        })
+        
+      
+        function color(){
+            var value=parseInt(cou.textContent);
+        
+            if (value < 0)
+       {
+        cou.style.color="red"
+       }
+       else if (value > 0)
+       {
+        cou.style.color="green"
+       }
+       else 
+       {
+        cou.style.color="orange"
+       }
+    }
+
+    </script>
+    
+</body>
+</html>
