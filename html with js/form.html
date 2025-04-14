@@ -19,14 +19,14 @@
                 <label class="text-white text-base font-medium mb-2" for="email">Email:</label>
                 <br>
                 <input class="rounded-lg outline-none" type="text" name="email" id="email">
-                <p id="para1"></p>
+                <p class="text-red-900 text-base font-normal" id="para1"></p>
             </div>
             <div>    
                
                 <label class="text-white text-base font-medium mb-2" for="passsword">Password:</label>
                 <br>
                 <input class="rounded-lg outline-none" type="text " name="password" id="password" >
-                <p id="para2"></p>
+                <p class="text-red-900 text-base font-normal" id="para2"></p>
             </div>
             <div class="flex flex-row justify-center">    
             <button class="bg-green-500 text-white px-7  py-1 rounded-md">login</button>
@@ -51,7 +51,7 @@ form.addEventListener("submit",(e)=>{
 })
 
 function advance(email,pass){
-    // console.log(email,pass);
+     console.log(email,pass);
    
     const emailregex =/^\S+@\S+\.\S+$/
     if(email.match(emailregex)){
@@ -63,7 +63,7 @@ function advance(email,pass){
 
     }
     else{
-        // console.log("false mail")
+        console.log("false mail")
         
         para1.textContent="invalid email";
 
@@ -73,12 +73,12 @@ function advance(email,pass){
     if(pass.match(passregex)){
         console.log("p.true")
         para2.textContent="";
-        alert("login sucess")
+    
     
 
     }
     else{
-        //  console.log("p.false")
+          console.log("p.false")
          para2.textContent="invalid password";
     }
 

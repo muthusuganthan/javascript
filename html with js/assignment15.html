@@ -10,12 +10,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Prata&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="2xl:container mx-auto bg-green-300 h-screen">
+    <div class="2xl:container mx-auto bg-green-300 ">
         <div class="w-[90%] mx-auto p-10">
 
-    <p class="text-balance text-black text-base leading-6 font-medium font-Roboto w-[full] h-[500px] " id="par">u</p>
+    <p class="text-center text-black text-base leading-6 font-medium font-Roboto  " id="par"></p>
     <div class="flex flex-row justify-center items-center">
-    <button class= "bg-orange-500 text-white px-6 py-1" id="refresh"> refresh </button>
+    <button class= "bg-orange-500 text-white px-6 py-3" id="refresh"> refresh </button>
 </div>
     </div>
     </div>
@@ -35,7 +35,8 @@
      console.log("data error")
      par.textContent= "error occured"
  }}
- refresh.addEventListener("click",fetchdata);
+ refresh.addEventListener("click",()=>{
+    fetchdata()});
  fetchdata();
  </script>
  
